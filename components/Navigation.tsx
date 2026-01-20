@@ -13,6 +13,7 @@ const Navigation: React.FC = () => {
 
   const navLinks: NavLink[] = [
     { name: 'About', href: '#about' },
+    { name: 'Chef', href: '#chef' },
     { name: 'Menu', href: '#menu' },
     { name: 'Reservation', href: '#reservation' },
     { name: 'Contact', href: '#footer' },

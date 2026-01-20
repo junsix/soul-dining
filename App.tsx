@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
+import ChefSection from './components/ChefSection';
 import MenuSection from './components/MenuSection';
 import ReservationCTA from './components/ReservationCTA';
 import Footer from './components/Footer';
@@ -13,6 +14,7 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         <About />
+        <ChefSection />
         <MenuSection />
         <ReservationCTA />
       </main>
