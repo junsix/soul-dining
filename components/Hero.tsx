@@ -6,8 +6,8 @@ const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://picsum.photos/1920/1080?random=100" 
-          alt="Korean Fine Dining"
+          src="https://picsum.photos/1920/1080?random=100"
+          alt="소울 다이닝의 정갈한 한식 파인다이닝 테이블"
           className="w-full h-full object-cover grayscale-[30%] brightness-[0.7]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/30 via-transparent to-stone-900/10"></div>
@@ -34,7 +34,10 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-70">
+      <div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-70"
+        aria-hidden="true"
+      >
         <div className="w-[1px] h-16 bg-stone-50 mx-auto"></div>
         <span className="block text-[10px] tracking-widest text-stone-50 mt-2 uppercase">Scroll</span>
       </div>

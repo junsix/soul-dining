@@ -6,14 +6,16 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Image Grid */}
         <div className="grid grid-cols-2 gap-4">
-          <img 
-            src="https://picsum.photos/600/800?random=201" 
-            alt="Chef Plating" 
+          <img
+            src="https://picsum.photos/600/800?random=201"
+            alt="셰프가 정성스럽게 요리를 플레이팅하는 모습"
+            loading="lazy"
             className="w-full h-[300px] object-cover rounded-sm md:translate-y-12"
           />
-          <img 
-            src="https://picsum.photos/600/800?random=202" 
-            alt="Interior Detail" 
+          <img
+            src="https://picsum.photos/600/800?random=202"
+            alt="소울 다이닝의 우아한 인테리어"
+            loading="lazy"
             className="w-full h-[300px] object-cover rounded-sm"
           />
         </div>

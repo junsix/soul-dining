@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useScrollPosition } from '../hooks/useScrollPosition';
+
+interface NavLink {
+  name: string;
+  href: string;
+}
 
 const Navigation: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const isScrolled = useScrollPosition(50);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { name: 'About', href: '#about' },
     { name: 'Menu', href: '#menu' },
     { name: 'Reservation', href: '#reservation' },
@@ -22,6 +20,7 @@ const Navigation: React.FC = () => {
 
   return (
     <nav
+      aria-label="메인 네비게이션"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out border-b ${
         isScrolled || isMobileMenuOpen
           ? 'bg-stone-50/95 backdrop-blur-sm border-stone-200 py-4 shadow-sm'
@@ -67,14 +66,20 @@ const Navigation: React.FC = () => {
         <button
           className="md:hidden z-50 text-stone-800"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} color={isScrolled ? '#292524' : '#292524'} />} 
-          {/* Note: Icon color logic simplified for visibility on both dark/light hero images. Using dark for safety if hero is light, or rely on blend mix mode later. For now, solid color. */}
+          {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
       <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="모바일 메뉴"
         className={`fixed inset-0 bg-stone-50 z-40 flex flex-col justify-center items-center space-y-8 transition-transform duration-500 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
