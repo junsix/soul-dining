@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useScrollPosition } from '../hooks/useScrollPosition';
+import { LINKS } from '../constants';
 
 interface NavLink {
   name: string;
@@ -52,10 +53,12 @@ const Navigation: React.FC = () => {
             </a>
           ))}
           <a
-            href="#reservation"
+            href={LINKS.reservation}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`px-6 py-2 border text-sm uppercase tracking-widest transition-all ${
-               isScrolled 
-                ? 'border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-white' 
+               isScrolled
+                ? 'border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-white'
                 : 'border-white text-white hover:bg-white hover:text-stone-900'
             }`}
           >

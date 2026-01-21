@@ -1,4 +1,5 @@
 import React from 'react';
+import { LINKS } from '../constants';
 
 const ReservationCTA: React.FC = () => {
   return (
@@ -8,9 +9,14 @@ const ReservationCTA: React.FC = () => {
         <p className="text-stone-400 font-light text-lg">
           Experience the harmony of traditional flavors and modern artistry.
         </p>
-        <button className="bg-stone-100 text-stone-900 px-10 py-4 text-sm uppercase tracking-[0.2em] hover:bg-stone-200 transition-colors duration-300">
+        <a
+          href={LINKS.reservation}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-stone-100 text-stone-900 px-10 py-4 text-sm uppercase tracking-[0.2em] hover:bg-stone-200 transition-colors duration-300"
+        >
           Make a Reservation
-        </button>
+        </a>
       </div>
     </section>
   );

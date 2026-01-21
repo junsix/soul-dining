@@ -1,5 +1,7 @@
 import React from 'react';
 import { Award, BookOpen, Utensils, Star } from 'lucide-react';
+import { IMAGES } from '../constants';
+import { SectionHeader, Card } from './ui';
 
 interface Achievement {
   icon: React.ReactNode;
@@ -35,14 +37,7 @@ const ChefSection: React.FC = () => {
     <section id="chef" className="py-24 md:py-32 bg-stone-100">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
-          <p className="text-xs font-bold tracking-[0.2em] text-stone-500 uppercase">
-            Our Chef
-          </p>
-          <h2 className="text-4xl md:text-5xl font-display text-stone-900">
-            김희은 셰프
-          </h2>
-        </div>
+        <SectionHeader subtitle="Our Chef" title="김희은 셰프" />
 
         {/* Chef Profile */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
@@ -50,7 +45,7 @@ const ChefSection: React.FC = () => {
           <div className="relative">
             <div className="aspect-[3/4] overflow-hidden">
               <img
-                src="https://i.namu.wiki/i/pO-eBcM6UDB0QAsQYwx2tvqj0lM_nqcX9pwC-UvFjhOkpryN5at0IJ4KlwSbkterJLM6ZgPuUzZv-Bwk35jLFiqln-P0JAj95VuRky7-HOCtFaZ_-XAOCU2AwkCPbZ1J1OAh9IUqfFvKdyqfXp2F9Q.webp"
+                src={IMAGES.chef}
                 alt="김희은 셰프의 프로필 사진"
                 loading="lazy"
                 className="w-full h-full object-cover object-top"
@@ -113,37 +108,32 @@ const ChefSection: React.FC = () => {
         </div>
 
         {/* Achievements */}
-        <div className="bg-white p-8 md:p-12 shadow-xl shadow-stone-200/50 relative overflow-hidden">
-          {/* Decorative inner border */}
-          <div className="absolute inset-2 border border-stone-100 pointer-events-none"></div>
+        <Card>
+          <h3 className="text-2xl font-serif text-stone-900 mb-10 text-center">
+            Awards & Recognition
+          </h3>
 
-          <div className="relative z-10">
-            <h3 className="text-2xl font-serif text-stone-900 mb-10 text-center">
-              Awards & Recognition
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {achievements.map((achievement) => (
-                <div
-                  key={achievement.title}
-                  className="text-center group"
-                >
-                  <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-stone-100 rounded-full group-hover:bg-stone-800 transition-colors">
-                    <span className="text-stone-600 group-hover:text-white transition-colors">
-                      {achievement.icon}
-                    </span>
-                  </div>
-                  <h4 className="text-base font-serif text-stone-800 mb-1">
-                    {achievement.title}
-                  </h4>
-                  <p className="text-sm text-stone-500 font-light">
-                    {achievement.description}
-                  </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {achievements.map((achievement) => (
+              <div
+                key={achievement.title}
+                className="text-center group"
+              >
+                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-stone-100 rounded-full group-hover:bg-stone-800 transition-colors">
+                  <span className="text-stone-600 group-hover:text-white transition-colors">
+                    {achievement.icon}
+                  </span>
                 </div>
-              ))}
-            </div>
+                <h4 className="text-base font-serif text-stone-800 mb-1">
+                  {achievement.title}
+                </h4>
+                <p className="text-sm text-stone-500 font-light">
+                  {achievement.description}
+                </p>
+              </div>
+            ))}
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

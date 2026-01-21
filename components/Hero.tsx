@@ -1,4 +1,5 @@
 import React from 'react';
+import { IMAGES } from '../constants';
 
 const Hero: React.FC = () => {
   return (
@@ -6,7 +7,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://picsum.photos/1920/1080?random=100"
+          src={IMAGES.hero}
           alt="소울 다이닝의 정갈한 한식 파인다이닝 테이블"
           className="w-full h-full object-cover grayscale-[30%] brightness-[0.7]"
         />
