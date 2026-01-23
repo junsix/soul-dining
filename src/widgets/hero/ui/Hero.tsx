@@ -1,5 +1,5 @@
 import React from 'react';
-import { IMAGES } from '../constants';
+import { IMAGES } from '@/shared/config';
 
 const Hero: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
             <span className="block italic font-serif">DINING</span>
           </h1>
         </div>
-        
+
         <div className="w-16 h-[1px] bg-stone-50/50 mx-auto my-8"></div>
 
         <p className="font-serif text-lg md:text-xl font-light text-stone-200 max-w-xl mx-auto leading-relaxed whitespace-pre-line">

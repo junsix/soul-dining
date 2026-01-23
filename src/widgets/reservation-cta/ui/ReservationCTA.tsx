@@ -1,5 +1,5 @@
 import React from 'react';
-import { LINKS } from '../constants';
+import { LINKS } from '@/shared/config';
 
 const ReservationCTA: React.FC = () => {
   return (

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { MENUS } from '../constants';
-import { MenuType } from '../types';
 import { Utensils, Moon } from 'lucide-react';
-import { SectionHeader, Card } from './ui';
+import { MenuType } from '@/shared/types';
+import { SectionHeader, Card } from '@/shared/ui';
+import { MENUS } from '@/entities/menu';
 
 const MenuSection: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<MenuType>(MenuType.DINNER);

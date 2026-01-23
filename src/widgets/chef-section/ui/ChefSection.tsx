@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, BookOpen, Utensils, Star } from 'lucide-react';
-import { IMAGES } from '../constants';
-import { SectionHeader, Card } from './ui';
+import { IMAGES } from '@/shared/config';
+import { SectionHeader, Card } from '@/shared/ui';
 
 interface Achievement {
   icon: React.ReactNode;

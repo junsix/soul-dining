@@ -1,5 +1,5 @@
 import React from 'react';
-import { IMAGES } from '../constants';
+import { IMAGES } from '@/shared/config';
 
 const About: React.FC = () => {
   return (
@@ -30,16 +30,16 @@ const About: React.FC = () => {
             </h2>
             <div className="w-12 h-1 bg-stone-800"></div>
           </div>
-          
+
           <div className="space-y-6 text-stone-600 leading-loose font-light">
             <p>
-              소울 다이닝은 'Soul'이라는 단어가 가진 영혼의 울림과 
+              소울 다이닝은 'Soul'이라는 단어가 가진 영혼의 울림과
               한국의 식문화인 '소울푸드'를 현대적으로 재해석합니다.
             </p>
             <p>
-              우리의 식탁은 단순한 식사가 아닌, 계절의 흐름과 
-              땅의 기운을 담은 하나의 작품입니다. 
-              김희은 셰프의 섬세한 터치로 완성되는 
+              우리의 식탁은 단순한 식사가 아닌, 계절의 흐름과
+              땅의 기운을 담은 하나의 작품입니다.
+              김희은 셰프의 섬세한 터치로 완성되는
               다채로운 한식의 세계로 여러분을 초대합니다.
             </p>
           </div>

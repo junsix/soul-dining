@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useScrollPosition } from '../hooks/useScrollPosition';
-import { LINKS } from '../constants';
+import { useScrollPosition } from '@/shared/lib';
+import { LINKS } from '@/shared/config';
 
 interface NavLink {
   name: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Instagram, Mail } from 'lucide-react';
-import { LINKS, RESTAURANT_INFO } from '../constants';
+import { LINKS, RESTAURANT_INFO } from '@/shared/config';
 
 const Footer: React.FC = () => {
   return (
