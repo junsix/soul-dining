@@ -9,27 +9,35 @@
 - **Tailwind CSS** (스타일링)
 - **lucide-react** (아이콘)
 
-## Project Structure
+## Project Structure (FSD Architecture)
+
+[Feature-Sliced Design](https://feature-sliced.design/) 아키텍처를 적용했습니다.
 
 ```
-soul-dining/
-├── components/
-│   ├── ui/                 # 재사용 UI 컴포넌트
-│   │   ├── Card.tsx
-│   │   └── SectionHeader.tsx
-│   ├── Navigation.tsx      # 헤더 네비게이션
-│   ├── Hero.tsx            # 히어로 섹션
-│   ├── About.tsx           # 소개 섹션
-│   ├── ChefSection.tsx     # 셰프 소개
-│   ├── MenuSection.tsx     # 코스 메뉴
-│   ├── ReservationCTA.tsx  # 예약 CTA
-│   └── Footer.tsx          # 푸터
-├── hooks/
-│   └── useScrollPosition.ts
-├── constants.ts            # 상수 (메뉴, 이미지 URL, 링크)
-├── types.ts                # TypeScript 타입 정의
-├── App.tsx
-└── index.tsx
+src/
+├── app/                    # 앱 초기화
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── styles/
+│
+├── widgets/                # 독립적인 페이지 블록
+│   ├── header/             # 네비게이션
+│   ├── hero/               # 히어로 섹션
+│   ├── about-section/      # 소개
+│   ├── chef-section/       # 셰프 소개
+│   ├── menu-section/       # 코스 메뉴
+│   ├── reservation-cta/    # 예약 CTA
+│   └── footer/             # 푸터
+│
+├── entities/               # 비즈니스 엔티티
+│   ├── dish/               # 요리
+│   └── menu/               # 메뉴 (코스 데이터)
+│
+└── shared/                 # 공유 리소스
+    ├── ui/                 # Card, SectionHeader
+    ├── lib/                # useScrollPosition
+    ├── config/             # LINKS, IMAGES, RESTAURANT_INFO
+    └── types/              # 공통 타입
 ```
 
 ## Run Locally
@@ -70,4 +78,11 @@ npm run build
 
 - **Color**: Tailwind stone 팔레트
 - **Typography**: font-display, font-serif
-- **Components**: Card, SectionHeader 등 재사용 컴포넌트
+- **Shared UI**: `@/shared/ui` (Card, SectionHeader)
+- **Config**: `@/shared/config` (LINKS, IMAGES, RESTAURANT_INFO)
+
+### Import Alias
+```tsx
+import { Card } from '@/shared/ui';
+import { LINKS } from '@/shared/config';
+```

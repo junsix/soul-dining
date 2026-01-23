@@ -6,21 +6,49 @@
 - Tailwind CSS (styling)
 - lucide-react (icons)
 
-## Project Structure
+## Project Structure (FSD Architecture)
+
+프로젝트는 [Feature-Sliced Design](https://feature-sliced.design/) 아키텍처를 따릅니다.
+
 ```
-/
-├── App.tsx              # Main app component
-├── index.tsx            # Entry point
-├── index.html           # HTML template
-├── types.ts             # TypeScript interfaces/enums
-├── constants.ts         # Static data (menus, dishes, etc.)
-└── components/          # React components
-    ├── Navigation.tsx   # Fixed header with scroll effect
-    ├── Hero.tsx         # Full-screen hero section
-    ├── About.tsx        # Two-column layout with images
-    ├── MenuSection.tsx  # Tabbed menu display
-    ├── ReservationCTA.tsx # Call-to-action section
-    └── Footer.tsx       # Contact info & social links
+src/
+├── app/                    # App Layer - 앱 초기화 및 설정
+│   ├── App.tsx             # 메인 앱 컴포넌트
+│   ├── index.tsx           # 엔트리 포인트
+│   └── styles/
+│       └── index.css       # 전역 스타일 (Tailwind)
+│
+├── widgets/                # Widgets Layer - 독립적인 페이지 블록
+│   ├── header/             # 네비게이션 헤더
+│   ├── hero/               # 히어로 섹션
+│   ├── about-section/      # 소개 섹션
+│   ├── chef-section/       # 셰프 소개
+│   ├── menu-section/       # 코스 메뉴 (탭 UI)
+│   ├── reservation-cta/    # 예약 CTA
+│   └── footer/             # 푸터
+│
+├── entities/               # Entities Layer - 비즈니스 엔티티
+│   ├── dish/               # 요리 엔티티
+│   │   ├── model/          # 타입 정의
+│   │   └── ui/             # DishCard 컴포넌트
+│   └── menu/               # 메뉴 엔티티
+│       └── model/          # 타입, 상수 (LUNCH_COURSES 등)
+│
+└── shared/                 # Shared Layer - 공유 리소스
+    ├── ui/                 # 재사용 UI (Card, SectionHeader)
+    ├── lib/                # 유틸리티 훅 (useScrollPosition)
+    ├── config/             # 설정값 (LINKS, IMAGES, RESTAURANT_INFO)
+    └── types/              # 공통 타입 정의
+
+index.html                  # HTML 템플릿
+```
+
+### Import Alias
+`@/` 별칭이 `./src`를 가리킵니다:
+```tsx
+import { Card } from '@/shared/ui';
+import { LINKS } from '@/shared/config';
+import { Navigation } from '@/widgets/header';
 ```
 
 ## Color Palette (Tailwind stone)
@@ -181,32 +209,71 @@ import { Menu, X, MapPin, Phone, Instagram, Mail, Utensils, Moon } from 'lucide-
 - **Hover opacity**: `hover:opacity-70`
 - **Bounce animation**: `animate-bounce`
 
-## Data Structure Pattern
-Define types in `types.ts`:
+## Data Structure Pattern (FSD)
+
+### 타입 정의 위치
+- **Entity 타입**: `src/entities/{entity}/model/types.ts`
+- **공통 타입**: `src/shared/types/index.ts`
+
 ```tsx
-export interface Item {
+// src/entities/dish/model/types.ts
+export interface Dish {
   id: string;
   name: string;
   description: string;
-  imageUrl?: string;
+}
+
+// src/entities/menu/model/types.ts
+export interface Course {
+  id: string;
+  name: string;
+  price: string;
+  dishes: Dish[];
 }
 ```
 
-Store data in `constants.ts`:
+### 상수 정의 위치
+- **Entity 데이터**: `src/entities/{entity}/model/constants.ts`
+- **설정값**: `src/shared/config/index.ts`
+
 ```tsx
-export const ITEMS: Item[] = [
-  { id: 'item1', name: '...', description: '...' }
-];
+// src/entities/menu/model/constants.ts
+export const LUNCH_COURSES: Course[] = [...];
+
+// src/shared/config/index.ts
+export const LINKS = { reservation: '...', instagram: '...' };
+export const IMAGES = { hero: '...', chef: '...' };
+export const RESTAURANT_INFO = { name: '...', phone: '...' };
 ```
 
-## New Page Checklist
-1. Create component in `/components/NewSection.tsx`
-2. Use `React.FC` type annotation
-3. Follow section template with `id`, `py-24`, `max-w-7xl mx-auto px-6`
-4. Use stone color palette consistently
-5. Add responsive classes (`md:` prefix)
-6. Import and add to `App.tsx` in proper order
-7. If needed, add nav link in `Navigation.tsx`
+## New Section/Widget Checklist (FSD)
+1. 위젯 폴더 생성: `src/widgets/new-section/`
+2. 컴포넌트 파일 생성:
+   ```
+   src/widgets/new-section/
+   ├── ui/
+   │   └── NewSection.tsx
+   └── index.ts          # public API export
+   ```
+3. `React.FC` 타입 사용
+4. 섹션 템플릿 적용: `id`, `py-24`, `max-w-7xl mx-auto px-6`
+5. stone 컬러 팔레트 사용
+6. 반응형 클래스 적용 (`md:` prefix)
+7. `src/widgets/new-section/index.ts`에서 export
+8. `src/app/App.tsx`에 import 및 추가
+9. 필요시 `src/widgets/header`에 네비게이션 링크 추가
+
+### Entity 추가 시
+1. 엔티티 폴더 생성: `src/entities/new-entity/`
+2. 구조:
+   ```
+   src/entities/new-entity/
+   ├── model/
+   │   ├── types.ts      # 타입 정의
+   │   └── constants.ts  # 상수 데이터
+   ├── ui/               # UI 컴포넌트 (선택)
+   └── index.ts          # public API
+   ```
 
 ## Brand Voice (Korean/English)
 - Elegant, minimalist, sophisticated
