@@ -17,7 +17,7 @@ const achievements: Achievement[] = [
   },
   {
     icon: <Award size={18} aria-hidden="true" />,
-    title: '라 리스트 Top 1000',
+    title: 'La Liste Top 1000',
     description: '2025 세계 최고의 레스토랑'
   },
   {
@@ -70,8 +70,7 @@ const ChefSection: React.FC = () => {
               <h3 className="text-2xl font-serif text-stone-900">윤대현</h3>
               <p className="text-sm text-stone-500 uppercase tracking-widest">Yoon Dae-hyun</p>
               <p className="text-stone-600 leading-relaxed font-light">
-                하와이 인턴십 시절의 차별을 딛고, 미슐랭 레스토랑에서
-                3일간의 스테이지를 쟁취했습니다. "세계 최고와 동네 식당의 차이는
+                "세계 최고와 동네 식당의 차이는
                 기술이 아니라 태도"라는 깨달음으로 요리의 구조를 설계합니다.
               </p>
             </div>
