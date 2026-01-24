@@ -43,12 +43,6 @@ const About: React.FC = () => {
               다채로운 한식의 세계로 여러분을 초대합니다.
             </p>
           </div>
-
-          <div className="pt-4">
-             <span className="inline-block border-b border-stone-800 pb-1 text-sm tracking-widest uppercase cursor-pointer hover:text-stone-500 hover:border-stone-500 transition-colors">
-               Read Our Story
-             </span>
-          </div>
         </div>
       </div>
     </section>

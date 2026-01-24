@@ -32,5 +32,32 @@ export const IMAGES = {
     cooking: 'https://picsum.photos/600/800?random=201',
     interior: 'https://picsum.photos/600/800?random=202',
   },
-  chef: 'https://i.namu.wiki/i/pO-eBcM6UDB0QAsQYwx2tvqj0lM_nqcX9pwC-UvFjhOkpryN5at0IJ4KlwSbkterJLM6ZgPuUzZv-Bwk35jLFiqln-P0JAj95VuRky7-HOCtFaZ_-XAOCU2AwkCPbZ1J1OAh9IUqfFvKdyqfXp2F9Q.webp',
+  chefs: {
+    kimHeeeun: '/images/chefs/김희은.jpg',
+    yoonDaehyun: '/images/chefs/윤대현.jpg',
+  },
+  story: {
+    jang: 'https://picsum.photos/600/400?random=301',
+    ingredients: 'https://picsum.photos/600/400?random=302',
+    ceramics: 'https://picsum.photos/600/400?random=303',
+  },
+};
+
+// Soil to Soul 스토리 콘텐츠
+export const STORY_CONTENT = {
+  jang: {
+    title: '장인의 손끝에서',
+    subtitle: '기순도 명인',
+    description: '3대를 이어온 전통 장 명인 기순도. 100년 된 종가의 씨간장과 전통 방식으로 빚은 된장, 고추장이 소울 다이닝의 깊은 맛을 완성합니다.',
+  },
+  ingredients: {
+    title: 'From the Earth',
+    subtitle: '제철 식자재',
+    description: '전국 각지에서 엄선한 제철 식자재. 강원의 산나물부터 제주의 해산물까지, 자연이 선사하는 최고의 재료만을 담습니다.',
+  },
+  ceramics: {
+    title: '그릇, 요리의 또 다른 언어',
+    subtitle: '도자기 장인',
+    description: '음식을 담는 그릇도 요리의 일부입니다. 국내 도예 장인들과의 협업으로 탄생한 그릇이 한 끼의 경험을 더욱 특별하게 만듭니다.',
+  },
 };

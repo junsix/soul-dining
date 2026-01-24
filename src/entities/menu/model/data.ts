@@ -5,7 +5,7 @@ export const MENUS: CourseMenu[] = [
   {
     type: MenuType.LUNCH,
     title: 'Lunch Course',
-    price: '₩ 120,000',
+    price: '₩ 170,000',
     courses: [
       DISHES.welcome,
       DISHES.persimmon,
@@ -21,7 +21,7 @@ export const MENUS: CourseMenu[] = [
   {
     type: MenuType.DINNER,
     title: 'Dinner Course',
-    price: '₩ 180,000',
+    price: '₩ 220,000',
     courses: [
       DISHES.welcome,
       DISHES.persimmon,

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useScrollPosition } from '@/shared/lib';
-import { LINKS } from '@/shared/config';
 
 interface NavLink {
   name: string;
@@ -13,11 +12,10 @@ const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks: NavLink[] = [
-    { name: 'About', href: '#about' },
-    { name: 'Chef', href: '#chef' },
+    { name: 'Story', href: '#story' },
     { name: 'Menu', href: '#menu' },
-    { name: 'Reservation', href: '#reservation' },
-    { name: 'Contact', href: '#footer' },
+    { name: 'Chef', href: '#chef' },
+    { name: 'Reserve', href: '#reservation' },
   ];
 
   return (
@@ -52,18 +50,6 @@ const Navigation: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a
-            href={LINKS.reservation}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-6 py-2 border text-sm uppercase tracking-widest transition-all ${
-               isScrolled
-                ? 'border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-white'
-                : 'border-white text-white hover:bg-white hover:text-stone-900'
-            }`}
-          >
-            Book Table
-          </a>
         </div>
 
         {/* Mobile Toggle */}

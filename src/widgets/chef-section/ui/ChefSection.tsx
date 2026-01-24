@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, BookOpen, Utensils, Star } from 'lucide-react';
+import { Award, Star } from 'lucide-react';
 import { IMAGES } from '@/shared/config';
 import { SectionHeader, Card } from '@/shared/ui';
 
@@ -13,7 +13,7 @@ const achievements: Achievement[] = [
   {
     icon: <Star size={18} aria-hidden="true" />,
     title: '미슐랭 가이드 1스타',
-    description: '소울 레스토랑'
+    description: '소울 레스토랑 (2023~)'
   },
   {
     icon: <Award size={18} aria-hidden="true" />,
@@ -23,7 +23,7 @@ const achievements: Achievement[] = [
   {
     icon: <Award size={18} aria-hidden="true" />,
     title: '라 리스트 Top 1000',
-    description: '세계 최고의 레스토랑 선정'
+    description: '2025 세계 최고의 레스토랑'
   },
   {
     icon: <Award size={18} aria-hidden="true" />,
@@ -36,73 +36,90 @@ const ChefSection: React.FC = () => {
   return (
     <section id="chef" className="py-24 md:py-32 bg-stone-100">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Header */}
-        <SectionHeader subtitle="Our Chef" title="김희은 셰프" />
+        <SectionHeader subtitle="Owner Chefs" title="두 셰프의 이야기" />
 
-        {/* Chef Profile */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
-          {/* Chef Image */}
-          <div className="relative">
-            <div className="aspect-[3/4] overflow-hidden">
+        {/* Two Chefs Profile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
+          {/* Chef Kim Hee-eun */}
+          <div className="space-y-6">
+            <div className="aspect-[4/5] overflow-hidden bg-stone-200">
               <img
-                src={IMAGES.chef}
-                alt="김희은 셰프의 프로필 사진"
+                src={IMAGES.chefs.kimHeeeun}
+                alt="김희은 셰프"
                 loading="lazy"
                 className="w-full h-full object-cover object-top"
               />
             </div>
-            {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-stone-300 -z-10 hidden md:block"></div>
+            <div className="space-y-3">
+              <h3 className="text-2xl font-serif text-stone-900">김희은</h3>
+              <p className="text-sm text-stone-500 uppercase tracking-widest">Kim Hee-eun</p>
+              <p className="text-stone-600 leading-relaxed font-light">
+                예술가 집안에서 도예를 공부하던 중, 아버지의 반대를 무릅쓰고
+                24만 6,870원을 들고 집을 나와 요리의 길을 택했습니다.
+                섬세한 감각으로 요리의 디테일을 완성합니다.
+              </p>
+            </div>
           </div>
 
-          {/* Chef Bio */}
-          <div className="space-y-8 lg:pt-12">
-            <div className="space-y-2">
-              <h3 className="text-2xl md:text-3xl font-serif text-stone-900">
-                예술에서 요리로, 새로운 길을 열다
-              </h3>
-              <div className="w-12 h-1 bg-stone-800"></div>
+          {/* Chef Yoon Dae-hyun */}
+          <div className="space-y-6">
+            <div className="aspect-[4/5] overflow-hidden bg-stone-200">
+              <img
+                src={IMAGES.chefs.yoonDaehyun}
+                alt="윤대현 셰프"
+                loading="lazy"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
-
-            <div className="space-y-6 text-stone-600 leading-loose font-light">
-              <p>
-                예술가 집안에서 태어나 도예를 공부하던 김희은 셰프는
-                할머니로부터 물려받은 요리에 대한 재능을 발견하고
-                새로운 길을 걷기 시작했습니다.
-              </p>
-              <p>
-                국제호텔직업전문학교와 세종대학교 관광대학원에서
-                요리의 기초부터 깊이까지 탐구하며,
-                WACS 세계요리경연대회에서 금메달을 수상하며
-                실력을 인정받았습니다.
-              </p>
-              <p>
-                현재 미슐랭 1스타 한식 파인다이닝 '소울'과
-                빕 구르망 '에그앤플라워'를 운영하며
-                한국 요리의 새로운 가능성을 보여주고 있습니다.
+            <div className="space-y-3">
+              <h3 className="text-2xl font-serif text-stone-900">윤대현</h3>
+              <p className="text-sm text-stone-500 uppercase tracking-widest">Yoon Dae-hyun</p>
+              <p className="text-stone-600 leading-relaxed font-light">
+                하와이 인턴십 시절의 차별을 딛고, 미슐랭 레스토랑에서
+                3일간의 스테이지를 쟁취했습니다. "세계 최고와 동네 식당의 차이는
+                기술이 아니라 태도"라는 깨달음으로 요리의 구조를 설계합니다.
               </p>
             </div>
+          </div>
+        </div>
 
-            {/* Philosophy Icons */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-stone-200">
-              <div className="text-center space-y-3">
-                <div className="w-12 h-12 mx-auto flex items-center justify-center bg-stone-200 rounded-full">
-                  <Utensils size={20} className="text-stone-700" aria-hidden="true" />
-                </div>
-                <p className="text-xs uppercase tracking-widest text-stone-500">Tradition</p>
-              </div>
-              <div className="text-center space-y-3">
-                <div className="w-12 h-12 mx-auto flex items-center justify-center bg-stone-200 rounded-full">
-                  <BookOpen size={20} className="text-stone-700" aria-hidden="true" />
-                </div>
-                <p className="text-xs uppercase tracking-widest text-stone-500">Innovation</p>
-              </div>
-              <div className="text-center space-y-3">
-                <div className="w-12 h-12 mx-auto flex items-center justify-center bg-stone-200 rounded-full">
-                  <Award size={20} className="text-stone-700" aria-hidden="true" />
-                </div>
-                <p className="text-xs uppercase tracking-widest text-stone-500">Excellence</p>
-              </div>
+        {/* Philosophy Section */}
+        <div className="mb-24">
+          <div className="max-w-3xl mx-auto text-center mb-16 space-y-8">
+            <div className="w-16 h-[1px] bg-stone-300 mx-auto"></div>
+            <blockquote className="text-2xl md:text-3xl font-serif text-stone-800 leading-relaxed">
+              "우리는 각자 10가지 색을 가지고 있었는데,
+              <br className="hidden md:block" />
+              섞이니 20가지가 아닌 무한대가 되었습니다."
+            </blockquote>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 space-y-4">
+              <p className="text-xs tracking-[0.2em] text-stone-400 uppercase">Attitude</p>
+              <h4 className="text-xl font-serif text-stone-900">기술보다 태도</h4>
+              <p className="text-stone-600 text-sm leading-relaxed font-light">
+                세계 최고의 레스토랑과 동네 식당의 차이는 기술이 아니라 태도입니다.
+                재료 하나, 손님 한 분을 대하는 마음가짐이 요리의 격을 결정합니다.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 space-y-4">
+              <p className="text-xs tracking-[0.2em] text-stone-400 uppercase">Obsession</p>
+              <h4 className="text-xl font-serif text-stone-900">재료에 대한 집착</h4>
+              <p className="text-stone-600 text-sm leading-relaxed font-light">
+                미역 50여 종을 맛보고, 전국 각지의 생산자를 직접 찾아갑니다.
+                발효 과정을 연구하고, 제철의 맛을 이해할 때까지 멈추지 않습니다.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 space-y-4">
+              <p className="text-xs tracking-[0.2em] text-stone-400 uppercase">Harmony</p>
+              <h4 className="text-xl font-serif text-stone-900">구조와 디테일의 조화</h4>
+              <p className="text-stone-600 text-sm leading-relaxed font-light">
+                요리의 큰 그림을 설계하는 윤대현 셰프와 섬세한 감각으로 완성하는 김희은 셰프.
+                서로 다른 강점이 보완하며 컨템포러리 한식의 새로운 장을 엽니다.
+              </p>
             </div>
           </div>
         </div>

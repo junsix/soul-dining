@@ -50,27 +50,15 @@ const MenuSection: React.FC = () => {
              <p className="text-xl text-stone-500 font-light italic">{currentMenu.price}</p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-0">
             {currentMenu.courses.map((dish, index) => (
-              <div key={`${dish.id}-${index}`} className="group">
-                <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-3">
-                  <h4 className="text-xl font-serif font-medium text-stone-800 group-hover:text-stone-600 transition-colors">
-                    {dish.name}
-                  </h4>
-                  <span className="hidden md:block h-[1px] flex-grow bg-stone-200 mx-6 relative top-[-6px]"></span>
-                  <span className="text-xs text-stone-400 font-mono">{(index + 1).toString().padStart(2, '0')}</span>
-                </div>
-
-                <div className="md:pl-4 md:border-l-2 md:border-stone-100 md:ml-2">
-                  <p className="text-stone-600 text-sm leading-relaxed max-w-2xl mb-2">
-                    {dish.description}
-                  </p>
-                  {dish.note && (
-                    <p className="text-stone-400 text-xs italic mt-2">
-                      * Guide: {dish.note}
-                    </p>
-                  )}
-                </div>
+              <div key={`${dish.id}-${index}`} className="flex items-center gap-4 py-3 border-b border-stone-100 last:border-0">
+                <span className="text-xs text-stone-400 font-mono w-6">
+                  {(index + 1).toString().padStart(2, '0')}
+                </span>
+                <span className="text-lg font-serif text-stone-800">
+                  {dish.name}
+                </span>
               </div>
             ))}
           </div>

@@ -28,9 +28,10 @@ const Hero: React.FC = () => {
 
         <div className="w-16 h-[1px] bg-stone-50/50 mx-auto my-8"></div>
 
-        <p className="font-serif text-lg md:text-xl font-light text-stone-200 max-w-xl mx-auto leading-relaxed whitespace-pre-line">
-          동양의 미와 한국의 맛<br/>
-          그 깊이를 담아낸 다이닝
+        <p className="font-serif text-base md:text-lg font-light text-stone-200 max-w-2xl mx-auto leading-relaxed">
+          영혼을 뜻하는 Soul,<br className="md:hidden" />
+          해방촌에서는 답답한 마음을 풀어<br className="hidden md:block" />
+          자유롭게 내려놓는다는 의미가 됩니다
         </p>
       </div>
 
