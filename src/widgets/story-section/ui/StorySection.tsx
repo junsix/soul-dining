@@ -22,15 +22,15 @@ const StorySection: React.FC = () => {
   ];
 
   return (
-    <section id="story" className="py-24 md:py-32 bg-stone-900 text-stone-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="story" className="py-16 md:py-32 bg-stone-900 text-stone-100">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         <SectionHeader
           subtitle="Our Philosophy"
           title="Soil to Soul"
           variant="dark"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
           {stories.map((story) => (
             <div
               key={story.key}
@@ -43,11 +43,11 @@ const StorySection: React.FC = () => {
                   className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
-              <div className="p-6 space-y-3">
+              <div className="p-4 md:p-6 space-y-2 md:space-y-3">
                 <p className="text-xs tracking-[0.2em] text-stone-400 uppercase">
                   {story.subtitle}
                 </p>
-                <h3 className="text-xl font-serif text-stone-100">
+                <h3 className="text-lg md:text-xl font-serif text-stone-100">
                   {story.title}
                 </h3>
                 <p className="text-sm text-stone-400 leading-relaxed font-light">

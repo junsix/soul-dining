@@ -74,6 +74,13 @@ const Footer: React.FC = () => {
           <div className="pt-4 border-t border-stone-800">
             <p className="text-xs text-stone-500">{RESTAURANT_INFO.closedDaysEn}</p>
           </div>
+
+          {/* Sister Restaurant */}
+          <div className="pt-4 border-t border-stone-800">
+            <span className="block text-stone-500 text-xs uppercase mb-2">Sister Restaurant</span>
+            <p className="text-stone-100 font-serif">에그앤플라워</p>
+            <p className="text-xs text-stone-500 mt-1">미슐랭 빕 구르망</p>
+          </div>
         </div>
       </div>
 

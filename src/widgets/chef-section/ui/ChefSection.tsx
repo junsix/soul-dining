@@ -17,11 +17,6 @@ const achievements: Achievement[] = [
   },
   {
     icon: <Award size={18} aria-hidden="true" />,
-    title: '미슐랭 빕 구르망',
-    description: '에그앤플라워'
-  },
-  {
-    icon: <Award size={18} aria-hidden="true" />,
     title: '라 리스트 Top 1000',
     description: '2025 세계 최고의 레스토랑'
   },
@@ -34,12 +29,12 @@ const achievements: Achievement[] = [
 
 const ChefSection: React.FC = () => {
   return (
-    <section id="chef" className="py-24 md:py-32 bg-stone-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="chef" className="py-16 md:py-32 bg-stone-100">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         <SectionHeader subtitle="Owner Chefs" title="두 셰프의 이야기" />
 
         {/* Two Chefs Profile */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16 md:mb-24">
           {/* Chef Kim Hee-eun */}
           <div className="space-y-6">
             <div className="aspect-[4/5] overflow-hidden bg-stone-200">
@@ -55,7 +50,7 @@ const ChefSection: React.FC = () => {
               <p className="text-sm text-stone-500 uppercase tracking-widest">Kim Hee-eun</p>
               <p className="text-stone-600 leading-relaxed font-light">
                 예술가 집안에서 도예를 공부하던 중, 아버지의 반대를 무릅쓰고
-                24만 6,870원을 들고 집을 나와 요리의 길을 택했습니다.
+                요리의 길을 택했습니다.
                 섬세한 감각으로 요리의 디테일을 완성합니다.
               </p>
             </div>
@@ -84,18 +79,18 @@ const ChefSection: React.FC = () => {
         </div>
 
         {/* Philosophy Section */}
-        <div className="mb-24">
-          <div className="max-w-3xl mx-auto text-center mb-16 space-y-8">
+        <div className="mb-16 md:mb-24">
+          <div className="max-w-3xl mx-auto text-center mb-10 md:mb-16 space-y-6 md:space-y-8">
             <div className="w-16 h-[1px] bg-stone-300 mx-auto"></div>
-            <blockquote className="text-2xl md:text-3xl font-serif text-stone-800 leading-relaxed">
+            <blockquote className="text-xl md:text-3xl font-serif text-stone-800 leading-relaxed px-2">
               "우리는 각자 10가지 색을 가지고 있었는데,
               <br className="hidden md:block" />
               섞이니 20가지가 아닌 무한대가 되었습니다."
             </blockquote>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            <div className="bg-white p-6 md:p-8 space-y-3 md:space-y-4">
               <p className="text-xs tracking-[0.2em] text-stone-400 uppercase">Attitude</p>
               <h4 className="text-xl font-serif text-stone-900">기술보다 태도</h4>
               <p className="text-stone-600 text-sm leading-relaxed font-light">
@@ -104,7 +99,7 @@ const ChefSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 space-y-4">
+            <div className="bg-white p-6 md:p-8 space-y-3 md:space-y-4">
               <p className="text-xs tracking-[0.2em] text-stone-400 uppercase">Obsession</p>
               <h4 className="text-xl font-serif text-stone-900">재료에 대한 집착</h4>
               <p className="text-stone-600 text-sm leading-relaxed font-light">
@@ -113,7 +108,7 @@ const ChefSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-white p-8 space-y-4">
+            <div className="bg-white p-6 md:p-8 space-y-3 md:space-y-4">
               <p className="text-xs tracking-[0.2em] text-stone-400 uppercase">Harmony</p>
               <h4 className="text-xl font-serif text-stone-900">구조와 디테일의 조화</h4>
               <p className="text-stone-600 text-sm leading-relaxed font-light">
@@ -127,10 +122,10 @@ const ChefSection: React.FC = () => {
         {/* Achievements */}
         <Card>
           <h3 className="text-2xl font-serif text-stone-900 mb-10 text-center">
-            Awards & Recognition
+            Awards
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {achievements.map((achievement) => (
               <div
                 key={achievement.title}

@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
           <p className="text-sm md:text-base tracking-[0.3em] uppercase opacity-90">
             Korean Contemporary
           </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light tracking-wide leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-light tracking-wide leading-tight">
             <span className="block mb-2">SOUL</span>
             <span className="block italic font-serif">DINING</span>
           </h1>
@@ -29,19 +29,18 @@ const Hero: React.FC = () => {
         <div className="w-16 h-[1px] bg-stone-50/50 mx-auto my-8"></div>
 
         <p className="font-serif text-base md:text-lg font-light text-stone-200 max-w-2xl mx-auto leading-relaxed">
-          영혼을 뜻하는 Soul,<br className="md:hidden" />
-          해방촌에서는 답답한 마음을 풀어<br className="hidden md:block" />
-          자유롭게 내려놓는다는 의미가 됩니다
+          셰프의 소울(Soul)이 담긴 음식을 통해<br />
+          소울(疏鬱)하길 바라는 마음을 전합니다.
         </p>
       </div>
 
       {/* Scroll Indicator */}
       <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-70"
+        className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-70"
         aria-hidden="true"
       >
-        <div className="w-[1px] h-16 bg-stone-50 mx-auto"></div>
-        <span className="block text-[10px] tracking-widest text-stone-50 mt-2 uppercase">Scroll</span>
+        <div className="w-[1px] h-12 md:h-16 bg-stone-50 mx-auto"></div>
+        <span className="block text-[11px] tracking-widest text-stone-50 mt-2 uppercase">Scroll</span>
       </div>
     </section>
   );

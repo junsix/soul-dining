@@ -27,7 +27,8 @@ export const RESTAURANT_INFO = {
 
 // 이미지 URL 상수
 export const IMAGES = {
-  hero: 'https://picsum.photos/1920/1080?random=100',
+  logo: '/images/soul-logo.jpg',
+  hero: '/images/main.jpg',
   about: {
     cooking: 'https://picsum.photos/600/800?random=201',
     interior: 'https://picsum.photos/600/800?random=202',
@@ -51,7 +52,7 @@ export const STORY_CONTENT = {
     description: '3대를 이어온 전통 장 명인 기순도. 100년 된 종가의 씨간장과 전통 방식으로 빚은 된장, 고추장이 소울 다이닝의 깊은 맛을 완성합니다.',
   },
   ingredients: {
-    title: 'From the Earth',
+    title: '모든 것은 토양(Soil)으로부터',
     subtitle: '제철 식자재',
     description: '전국 각지에서 엄선한 제철 식자재. 강원의 산나물부터 제주의 해산물까지, 자연이 선사하는 최고의 재료만을 담습니다.',
   },

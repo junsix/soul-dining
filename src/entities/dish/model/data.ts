@@ -103,5 +103,11 @@ export const DISHES: Record<string, Dish> = {
     name: '꼬두람이',
     description: '꼬두람이는 순우리말로 막내, 마지막, 꼬리라는 뜻을 지니고 있는 단어입니다. 수제 호두 정과와 팥 가나슈로 속을 채운 타르트, 그리고 제철 딸기를 올리고 생강청, 패션후르츠가나슈로 속을 채운 파블로바입니다.',
     imageUrl: getImg(15)
+  },
+  lunch_main: {
+    id: 'lunch_main',
+    name: "'양' 떡갈비 or '한우' 반상",
+    description: '양의 갈비뼈에 붙어있는 늑간살과 갈비살을 다져 낸 양떡갈비, 또는 숯불에 구운 한우 채끝살과 살치살로 구성된 한우 반상 중 선택하실 수 있습니다.',
+    imageUrl: getImg(16)
   }
 };

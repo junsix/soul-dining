@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useScrollPosition } from '@/shared/lib';
+import { IMAGES } from '@/shared/config';
 
 interface NavLink {
   name: string;
@@ -27,18 +28,31 @@ const Navigation: React.FC = () => {
           : 'bg-transparent border-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <div className="z-50">
-          <a href="#" className={`text-2xl tracking-widest font-display font-bold ${
-            isScrolled || isMobileMenuOpen ? 'text-stone-900' : 'text-stone-900 md:text-stone-50'
-          } transition-colors duration-300`}>
-            SOUL DINING
+      <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center relative z-[70]">
+        {/* Mobile: Hamburger (left) */}
+        <button
+          className="md:hidden text-stone-800 p-2 -ml-2 min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+        >
+          {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+        </button>
+
+        {/* Logo - Mobile: center, Desktop: left */}
+        <div className="flex-1 md:flex-none flex justify-center md:justify-start">
+          <a href="#">
+            <img
+              src={IMAGES.logo}
+              alt="Soul Dining"
+              className="h-10 md:h-12 w-auto"
+            />
           </a>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-12 items-center">
+        <div className="hidden md:flex space-x-12 items-center flex-shrink-0 ml-auto">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -52,39 +66,31 @@ const Navigation: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden z-50 text-stone-800"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
-          aria-expanded={isMobileMenuOpen}
-          aria-controls="mobile-menu"
-        >
-          {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-        </button>
+        {/* Mobile: Empty space for balance */}
+        <div className="md:hidden w-[44px] flex-shrink-0"></div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div
-        id="mobile-menu"
-        role="dialog"
-        aria-modal="true"
-        aria-label="모바일 메뉴"
-        className={`fixed inset-0 bg-stone-50 z-40 flex flex-col justify-center items-center space-y-8 transition-transform duration-500 ease-in-out ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } md:hidden`}
-      >
-        {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-2xl font-serif text-stone-900"
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
+      {isMobileMenuOpen && (
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="모바일 메뉴"
+          className="fixed inset-0 w-full h-full bg-stone-50 z-[60] flex flex-col justify-center items-center space-y-8 md:hidden"
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl font-serif text-stone-900 py-2"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };
