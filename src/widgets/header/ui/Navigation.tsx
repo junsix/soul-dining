@@ -16,7 +16,7 @@ const Navigation: React.FC = () => {
     { name: 'Story', href: '#story' },
     { name: 'Menu', href: '#menu' },
     { name: 'Chef', href: '#chef' },
-    { name: 'Reserve', href: '#reservation' },
+    { name: 'Reservation', href: '#reservation' },
   ];
 
   return (
