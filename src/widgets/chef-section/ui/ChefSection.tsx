@@ -22,8 +22,8 @@ const achievements: Achievement[] = [
   },
   {
     icon: <Award size={18} aria-hidden="true" />,
-    title: 'WACS 세계요리경연대회',
-    description: '금메달 수상'
+    title: '블루리본',
+    description: '3개'
   }
 ];
 
