@@ -6,7 +6,7 @@ import { SectionHeader, Card } from '@/shared/ui';
 interface Achievement {
   icon: React.ReactNode;
   title: string;
-  description: string;
+  description?: string;
 }
 
 const achievements: Achievement[] = [
@@ -22,8 +22,7 @@ const achievements: Achievement[] = [
   },
   {
     icon: <Award size={18} aria-hidden="true" />,
-    title: '블루리본',
-    description: '3개'
+    title: '블루리본 3개'
   }
 ];
 
@@ -138,9 +137,11 @@ const ChefSection: React.FC = () => {
                 <h4 className="text-base font-serif text-stone-800 mb-1">
                   {achievement.title}
                 </h4>
-                <p className="text-sm text-stone-500 font-light">
-                  {achievement.description}
-                </p>
+                {achievement.description && (
+                  <p className="text-sm text-stone-500 font-light">
+                    {achievement.description}
+                  </p>
+                )}
               </div>
             ))}
           </div>
