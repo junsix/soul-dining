@@ -1,22 +1,23 @@
 import React from 'react';
-import { Award, Star } from 'lucide-react';
+import { Award } from 'lucide-react';
 import { IMAGES } from '@/shared/config';
 import { SectionHeader, Card } from '@/shared/ui';
 
 interface Achievement {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
+  image?: string;
   title: string;
   description?: string;
 }
 
 const achievements: Achievement[] = [
   {
-    icon: <Star size={18} aria-hidden="true" />,
+    image: '/images/MichelinStar.png',
     title: '미슐랭 가이드 1스타',
     description: '소울 레스토랑 (2023~)'
   },
   {
-    icon: <Award size={18} aria-hidden="true" />,
+    image: '/images/La Liste.png',
     title: 'La Liste Top 1000',
     description: '2025 세계 최고의 레스토랑'
   },
@@ -129,11 +130,21 @@ const ChefSection: React.FC = () => {
                 key={achievement.title}
                 className="text-center group"
               >
-                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-stone-100 rounded-full group-hover:bg-stone-800 transition-colors">
-                  <span className="text-stone-600 group-hover:text-white transition-colors">
-                    {achievement.icon}
-                  </span>
-                </div>
+                {achievement.image ? (
+                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <img
+                      src={achievement.image}
+                      alt={achievement.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-stone-100 rounded-full group-hover:bg-stone-800 transition-colors">
+                    <span className="text-stone-600 group-hover:text-white transition-colors">
+                      {achievement.icon}
+                    </span>
+                  </div>
+                )}
                 <h4 className="text-base font-serif text-stone-800 mb-1">
                   {achievement.title}
                 </h4>
