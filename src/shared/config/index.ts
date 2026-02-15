@@ -27,7 +27,7 @@ export const RESTAURANT_INFO = {
 
 // 이미지 URL 상수
 export const IMAGES = {
-  logo: '/images/soul.png',
+  logo: '/images/logo.png',
   hero: '/images/main.jpg',
   about: {
     cooking: 'https://picsum.photos/600/800?random=201',
