@@ -10,7 +10,7 @@ const MenuSection: React.FC = () => {
   const currentMenu = MENUS.find(m => m.type === activeMenu) || MENUS[1];
 
   return (
-    <section id="menu" className="py-16 md:py-24 bg-stone-100 relative">
+    <section id="menu" className="py-16 md:py-24 bg-stone-100 relative overflow-hidden">
       {/* Decorative Background Element */}
       <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-stone-200/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
