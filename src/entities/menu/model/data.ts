@@ -8,13 +8,13 @@ export const MENUS: CourseMenu[] = [
     price: '₩ 170,000',
     courses: [
       DISHES.welcome,
-      DISHES.persimmon,
+      DISHES.mulhoe,
       DISHES.abalone,
       DISHES.mushrooms,
       DISHES.potato_pancake,
       DISHES.lunch_main,
-      DISHES.noodles,
-      DISHES.black_white,
+      DISHES.cold_noodles,
+      DISHES.in_summer,
       DISHES.kkodurami
     ]
   },
@@ -24,15 +24,15 @@ export const MENUS: CourseMenu[] = [
     price: '₩ 270,000',
     courses: [
       DISHES.welcome,
-      DISHES.persimmon,
+      DISHES.mulhoe,
       DISHES.abalone,
       DISHES.mushrooms,
       DISHES.potato_pancake,
       DISHES.pithivier,
       DISHES.duck,
       DISHES.beef_bansang,
-      DISHES.gukbap,
-      DISHES.black_white,
+      DISHES.cold_noodles,
+      DISHES.in_summer,
       DISHES.ceramics,
       DISHES.kkodurami
     ]

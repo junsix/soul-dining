@@ -11,11 +11,10 @@ export const DISHES: Record<string, Dish> = {
     note: '화분에서 나무 스틱과 음식을 같이 빼내어 소스를 듬뿍 찍어드시면 됩니다.',
     imageUrl: getImg(1)
   },
-  persimmon: {
-    id: 'persimmon',
-    name: '홍시설화',
-    description: '홍시를 메인으로 만든 소스와 눈이 내리는 겨울에 피어나는 꽃을 모티브로 만들었습니다. 안쪽엔 표고버섯, 미나리, 숙주, 파프리카, 소고기로 만든 냉채를 올방개묵으로 감싸내고 위쪽은 단호박 칩과 머스터드 씨드입니다.',
-    note: '드실 때는 단호박 칩을 부숴 모든 재료를 같이 즐기시면 됩니다.',
+  mulhoe: {
+    id: 'mulhoe',
+    name: '물회',
+    description: '여름 제철 해산물로 준비한 물회입니다.',
     imageUrl: getImg(2)
   },
   abalone: {
@@ -70,25 +69,16 @@ export const DISHES: Record<string, Dish> = {
     note: '고기를 드시며 반찬과 솥밥을 같이 즐기시면 됩니다.',
     imageUrl: getImg(10)
   },
-  noodles: {
-    id: 'noodles',
-    name: '후식국수',
-    description: '고기를 먹고 면을 먹는 한국의 문화를 코스에 표현했습니다. 후추를 사용해 제면한 생면과 차돌박이 그리고 한국의 나주곰탕을 베이스로 만든 육수입니다.',
-    note: '부추 오일과 함께 드시면 되겠습니다.',
+  cold_noodles: {
+    id: 'cold_noodles',
+    name: '후식 냉면',
+    description: '고기를 먹고 면을 먹는 한국의 문화를 코스에 표현했습니다. 여름에 맞춰 시원하게 준비한 냉면입니다.',
     imageUrl: getImg(11)
   },
-  gukbap: {
-    id: 'gukbap',
-    name: '국밥',
-    description: '한국의 소울푸드인 국밥을 소울만의 방식으로 표현했습니다. 찰보리밥과 이탈리아의 생면 중 하나인 말룰레듀스, 그리고 한국의 나주곰탕 베이스의 육수입니다.',
-    note: '부추 오일과 함께 드시면 되겠습니다.',
-    imageUrl: getImg(12)
-  },
-  black_white: {
-    id: 'black_white',
-    name: '흑 과 백',
-    description: '올리브로 만든 아이스크림이며 아래에 레몬파우더와 올리브로 만든 크럼블과 함께 캐비어와 트러플 칩을 올려 마무리했습니다.',
-    note: '약 4방울 스페인 알베퀴나 엑스트라 버진 올리브오일과 한국의 저온 압착 들기름을 블랜딩한 오일입니다.',
+  in_summer: {
+    id: 'in_summer',
+    name: '여름 안에서',
+    description: '여름을 주제로 준비한 소울의 디저트입니다.',
     imageUrl: getImg(13)
   },
   ceramics: {
@@ -106,8 +96,9 @@ export const DISHES: Record<string, Dish> = {
   },
   lunch_main: {
     id: 'lunch_main',
-    name: "'양' 떡갈비 or '한우' 반상",
+    name: "'양' 떡갈비 or '한우' 반상 (+30,000)",
     description: '양의 갈비뼈에 붙어있는 늑간살과 갈비살을 다져 낸 양떡갈비, 또는 숯불에 구운 한우 채끝살과 살치살로 구성된 한우 반상 중 선택하실 수 있습니다.',
+    note: "'한우' 반상 선택 시 30,000원이 추가됩니다.",
     imageUrl: getImg(16)
   }
 };
