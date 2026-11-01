@@ -8,8 +8,8 @@ export const LINKS = {
 export const RESTAURANT_INFO = {
   name: 'Soul Dining',
   nameKo: '소울 다이닝',
-  address: '서울 용산구 신흥로26길 35 바나힐 지하1층',
-  addressEn: '35, Sinheung-ro 26-gil, Yongsan-gu, Seoul, B1F Banahill',
+  address: '서울 용산구 신흥로26길 35 바나힐 지하2층',
+  addressEn: '35, Sinheung-ro 26-gil, Yongsan-gu, Seoul, B2F Banahill',
   phone: '0507-1335-7685',
   email: 'reservation@souldining.kr',
   hours: {
